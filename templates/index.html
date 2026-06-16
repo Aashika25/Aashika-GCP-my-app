@@ -15,12 +15,16 @@
         <header>
             <div class="header-content">
                 <h1>BigQuery Updates</h1>
-                <button id="refresh-btn" class="btn btn-primary">
-                    <span class="btn-text">Refresh</span>
-                    <svg class="spinner" viewBox="0 0 50 50">
-                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-                    </svg>
-                </button>
+                <div class="header-actions">
+                    <button id="theme-toggle" class="btn btn-secondary" title="Toggle Light/Dark Mode">🌓</button>
+                    <button id="export-csv-btn" class="btn btn-secondary">Export CSV</button>
+                    <button id="refresh-btn" class="btn btn-primary">
+                        <span class="btn-text">Refresh</span>
+                        <svg class="spinner" viewBox="0 0 50 50">
+                            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                        </svg>
+                    </button>
+                </div>
             </div>
             <p class="subtitle">Latest release notes from Google Cloud.</p>
         </header>
@@ -29,6 +33,13 @@
             <!-- Notes will be injected here -->
         </main>
     </div>
+    
+    <button id="back-to-top" class="btn btn-primary" title="Go to top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

@@ -8,6 +8,20 @@
     --border-color: #334155;
 }
 
+body.light-mode {
+    --bg-color: #f1f5f9;
+    --card-bg: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent-color: #2563eb;
+    --accent-hover: #1d4ed8;
+    --border-color: #cbd5e1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -83,6 +97,27 @@ h1 {
 
 .btn-primary:active {
     transform: translateY(0);
+}
+
+.btn-secondary {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--border-color);
+    transform: translateY(-2px);
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+#theme-toggle {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
 }
 
 .btn:disabled {
@@ -201,6 +236,44 @@ h1 {
 .tweet-btn:hover {
     background-color: #1a91da;
     box-shadow: 0 4px 6px -1px rgba(29, 161, 242, 0.3);
+}
+
+.copy-btn {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+}
+
+.copy-btn:hover {
+    background-color: var(--border-color);
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 /* Loading state */
